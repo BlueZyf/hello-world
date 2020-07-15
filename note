@@ -1,0 +1,86 @@
+# 学习指南
+% 基本上车流程 --> 电脑端基本配置和文件修改 --> 地图绘制，修改 --> 硬件设备端接线、车辆常识 --> bash脚本指令 --> c++/python编程（planning\canbus\perception\prediction） 
+# apollo整体框架
+
+# ①环境搭配
+
+# 上车测试流程
+	% Ctrl+Alt+T
+	% ssh moonx@192.168.8.100 (连接车上主机)
+	% cd apollo
+	（更新代码）
+	% git status
+	% git fetch origin ××× 从远程下拉分支
+	% git checkout ×××
+	% git pull
+	（启动 Docker）
+	% bash docker/scripts/start.sh
+	% bash docker/scripts/dev_into.sh
+	（编译）
+	% bash apollo.sh build
+	（启动 Dreamview 系统）
+	% bash scripts/bootstrap.sh   打开 192.168.8.100:8888
+
+# ②cyber_monitor消息查询
+
+# ③gitlab git pull/push 用法与原理
+	-git push <远程主机名><本地分支名><远程分支名>  将本地的分支推送到远程分支
+	-git push origin master 远程分支被省略，如上则表示将本地分支推送到与之存在追踪关系的远程分支（通常两者同名），如果该远程分支不存在，则会被新建
+	-git push origin ：refs/for/master
+	如果省略本地分支名，则表示删除指定的远程分支，因为这等同于推送一个空的本地分支到远程分支，等同于 git push origin –delete master
+	-git push origin
+	如果当前分支与远程分支存在追踪关系，则本地分支和远程分支都可以省略，将当前分支推送到origin主机的对应分支
+
+# ④每日/每周报告
+
+# 几个指令
+	# 手动控制红绿灯
+	% bash scripts/remote_sender.sh
+	% r(红灯)、g(绿灯)、a(左转)、d(右转)
+
+	# sim control控制所有红绿灯
+	% bash scripts/manual_light.sh
+
+	# 关闭docker
+	% docker service docker stop 
+
+	# 重启docker服务  
+	% sudo service docker restart
+
+	#Git LFS (Git Large File Storage, Git 大文件存储)。
+	% git lfs pull   用于将大文件和 Git 仓库隔离，单独进行管理，减小项目 Git 仓库的体积，加快 clone Git 仓库的速度。
+
+	# PnC过滤
+	% bash split_pnc.sh data/report/0708/20200708145327.record.0000
+
+	# 播放
+	% cyber_recorder play -f data/report/0708/20200708145327.record.00000
+
+	# 笔记本连接小车
+	% 连接wifi
+	% ssh moonx@192.168.10.100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

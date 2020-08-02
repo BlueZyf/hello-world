@@ -14,4 +14,4 @@ BLOCK
 echo "Hello World!"
 echo "What is your name?"
 read PERSON
-echo "Hello," $PERSON""
+echo "Hello," $PERSON",it is your home"

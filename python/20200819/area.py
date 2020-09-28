@@ -1,0 +1,8 @@
+from const import PI
+
+def calc_round_area(radios):
+	return PI*(radios **2)
+
+def main():
+	print "round area:",calc_round_area(2)
+main()

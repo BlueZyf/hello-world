@@ -1,0 +1,16 @@
+├── BUILD      // bazel编译文件
+├── common     // PID和控制器的具体实现     --- 算法具体实现
+├── conf       // 配置文件                 --- 配置文件
+├── control_component_test.cc
+├── controller           // 控制器         --- 具体的控制器实现
+├── dag                  // dag依赖
+├── integration_tests    // 测试
+├── launch               // launch加载
+├── proto                // protobuf文件，主要是各个控制器的配置数据结构
+├── testdata             // 测试数据
+├── tools                // 工具类
+├── control_component.cc  // 模块入口
+└── control_component.h   
+
+
+
